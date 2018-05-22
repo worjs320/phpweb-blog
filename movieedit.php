@@ -32,7 +32,7 @@
     ?>
 
         <div class="container">
-            <div style="text-align:center;"><a href="index.php"><img src="./images/�ΰ�3.PNG" style="width:100%;max-width:400px;"></a></div>
+            <div style="text-align:center;"><a href="index.php"><img src="./images/3.PNG" style="width:100%;max-width:400px;"></a></div>
             <!-- Static navbar -->
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -64,7 +64,7 @@
                                 <a href="#">
                                     <?php
                             if($_SESSION[id]){
-                            echo $_SESSION[name]."(".$_SESSION[id].") �� ȯ���մϴ�";
+                            echo $_SESSION[name]."(".$_SESSION[id].")님 환영합니다";
                             }
                             else echo "";
                             ?>
@@ -99,7 +99,7 @@
             $query = "select * from movie where no='$no' and id='$id' ";
             $result = mysqli_query($connect,$query);
             $data = mysqli_fetch_array($result);
-            if($id!=$_SESSION[id])Error("�Խù� ������ �ƴմϴ�");
+            if($id!=$_SESSION[id])Error("게시물 주인이 아닙니다.");
             ?>
             <div class="jumbotron" style="padding-bottom:10px; max-width:800px; margin-right:auto; margin-left:auto;">
                 <div style="padding : 30px;">
