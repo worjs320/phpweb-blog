@@ -35,7 +35,7 @@
     ?>
 
         <div class="container">
-            <div style="text-align:center;"><a href="index.php"><img src="./images/�ΰ�3.PNG" style="width:100%;max-width:400px;"></a></div>
+            <div style="text-align:center;"><a href="index.php"><img src="./images/로고3.PNG" style="width:100%;max-width:400px;"></a></div>
             <!-- Static navbar -->
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -67,7 +67,7 @@
                                 <a href="#">
                                     <?php
                             if($_SESSION[id]){
-                            echo $_SESSION[name]."(".$_SESSION[id].") �� ȯ���մϴ�";
+                            echo $_SESSION[name]."(".$_SESSION[id].")님 환영합니다.";
                             }
                             else echo "";
                             ?>
@@ -98,7 +98,7 @@
                 </div>
             </nav>
             <?php
-            $connect = mysqli_connect("localhost","id5424089_root","111111","id5424089_phpweb");
+            $connect = mysqli_connect("localhost","root","111111","phpweb");
             $query = "select * from textpage where no='$no' and id='$id' ";
             $result = mysqli_query($connect,$query);
             $data = mysqli_fetch_array($result);
