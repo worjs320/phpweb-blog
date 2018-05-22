@@ -1,6 +1,6 @@
 <?php 
     include("./lib/dbcon.php");
-    $connect = mysqli_connect("localhost","id5424089_root","111111","id5424089_phpweb");
+    $connect = mysqli_connect("localhost","root","111111","phpweb");
     session_start();
 
     $id = $_POST[id];
