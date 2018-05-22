@@ -1,0 +1,65 @@
+mysql 계정 : root, 
+      비밀번호 : 111111,
+      db이름 : phpweb
+
+mysqli_connect("localhost","root","111111","phpweb");
+
+
+※댓글 db테이블 생성
+
+CREATE TABLE `phpweb`.`comment` ( 
+`no` int(11) NOT NULL, 
+`listnumber` int(20) NOT NULL, 
+`id` varchar(30) NOT NULL, 
+`name` varchar(30) NOT NULL, 
+`comtext` text NOT NULL, 
+`date` varchar(30) NOT NULL,
+PRIMARY KEY (`no`); ) 
+
+
+※유튜브 게시판 db테이블 생성
+
+CREATE TABLE `phpweb`.`movie` ( 
+`no` int(11) NOT NULL, 
+`id` varchar(50) NOT NULL, 
+`name` varchar(50) NOT NULL, 
+`title` text NOT NULL, 
+`address` varchar(300) NOT NULL, 
+`date` varchar(30) NOT NULL,
+PRIMARY KEY (`no`); ) 
+
+
+※회원가입 db 테이블 생성
+
+CREATE TABLE `phpweb`.`signup2` ( 
+`no` int(11) NOT NULL, 
+`id` varchar(15) DEFAULT NULL, 
+`pw` varchar(20) DEFAULT NULL, 
+`name` varchar(10) NOT NULL, 
+`sex` varchar(5) DEFAULT NULL, 
+`email` varchar(30) DEFAULT NULL,
+PRIMARY KEY (`no`); ) 
+
+
+※게시판 db테이블 생성
+
+CREATE TABLE `phpweb`.`textpage2` ( 
+`no` int(11) NOT NULL, 
+`id` varchar(30) NOT NULL, 
+`name` varchar(30) NOT NULL, 
+`title` varchar(50) NOT NULL, 
+`text` text NOT NULL, 
+`date` varchar(20) NOT NULL, 
+`file` varchar(100) DEFAULT NULL,
+PRIMARY KEY (`no`); )
+
+
+
+
+
+
+
+
+
+
+
