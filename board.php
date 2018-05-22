@@ -76,7 +76,7 @@
                             <a href="#">
                             <?php
                             if($_SESSION[id]){
-                            echo $_SESSION[name]."(".$_SESSION[id].") �� ȯ���մϴ�";
+                            echo $_SESSION[name]."(".$_SESSION[id].")님 ";
                             }
                             else echo "";
                             ?>
