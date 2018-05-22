@@ -66,7 +66,7 @@
                                 <a href="#">
                                     <?php
                             if($_SESSION[id]){
-                            echo $_SESSION[name]."(".$_SESSION[id].") �� ȯ���մϴ�";
+                            echo $_SESSION[name]."(".$_SESSION[id].") 님 환영합니다";
                             }
                             else echo "";
                             ?>
@@ -112,6 +112,7 @@
                     <div class="panel-body" style="width: auto;">
                         <?php echo "<span class=\"glyphicon glyphicon-user\" style=\"font-size:17px;\"></span><b style=\"font-size:20px;\"> $data[name]</b>"; 
                         echo "<b style=\"float:right; font-size:20px;\">$data[date]</b>";?><br><br><?=nl2br($data[text])?>
+                        <?php if($data[file]){echo "<div><img src=\"./imagedata/$data[file]\"; style=\"width:100%; height:auto;\"></div>";}?>
                     </div>
                 </div>
                 
@@ -160,6 +161,7 @@
                     echo "</div>";       
                     } ?>
             </div>
+
             
         
 

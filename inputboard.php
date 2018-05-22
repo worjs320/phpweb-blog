@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <title>Bal-ag Community</title>
-    <link rel="shortcut icon" type="image?x-icon" href="./images/�ĺ���.PNG">
+    <link rel="shortcut icon" type="image?x-icon" href="./images/파비콘.PNG">
 
 
     <link href="css/bootstrap.css" rel="stylesheet">
@@ -30,7 +30,7 @@
     ?>
 
         <div class="container">
-            <div style="text-align:center;"><a href="index.php"><img src="./images/�ΰ�3.PNG" style="width:100%;max-width:400px;"></a></div>
+            <div style="text-align:center;"><a href="index.php"><img src="./images/로고3.PNG" style="width:100%;max-width:400px;"></a></div>
             <!-- Static navbar -->
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
@@ -61,7 +61,7 @@
                                 <a href="#">
                                     <?php
                             if($_SESSION[id]){
-                            echo $_SESSION[name]."(".$_SESSION[id].") �� ȯ���մϴ�";
+                            echo $_SESSION[name]."(".$_SESSION[id].")님 환영합니다";
                             }
                             else echo "";
                             ?>
@@ -93,7 +93,7 @@
             </nav>
             <div class="jumbotron" style="padding-bottom:10px; max-width:800px; margin-right:auto; margin-left:auto;">
                 <div style="padding : 30px;">
-                    <form method="POST" action="./inputboard_post.php">
+                    <form method="POST" action="./inputboard_post.php" enctype="multipart/form-data">
                         <input type="hidden" name="id" class="form-control" value='<?=$_SESSION[id]?>'>
                         <div class="form-group">
                             <label>작성자</label>
@@ -102,6 +102,10 @@
                         <div class="form-group">
                             <label>제목</label>
                             <input type="text" name="title" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label>사진</label>
+                            <input type="file" name="file01">
                         </div>
                         <div class="form-group">
                             <label>내용</label>
