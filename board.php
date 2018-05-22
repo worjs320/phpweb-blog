@@ -76,7 +76,7 @@
                             <a href="#">
                             <?php
                             if($_SESSION[id]){
-                            echo $_SESSION[name]."(".$_SESSION[id].")님 ";
+                            echo $_SESSION[name]."(".$_SESSION[id].")님 환영합니다 ";
                             }
                             else echo "";
                             ?>
