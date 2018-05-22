@@ -3,6 +3,6 @@ session_start();
 session_destroy();
 ?>
 <script>
-    window.alert('·Î±×¾Æ¿ô µÇ¾ú½À´Ï´Ù');
+    window.alert('ë¡œê·¸ì•„ì›ƒ ë˜ì—ˆìŠµë‹ˆë‹¤');
     location = './index.php';
 </script>
