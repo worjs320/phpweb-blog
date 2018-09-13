@@ -1,11 +1,11 @@
-mysql ���� : root, 
-      ��й�ȣ : 111111,
-      db�̸� : phpweb
+mysql 계정 : root, 
+      비밀번호 : 111111,
+      db이름 : phpweb
 
 mysqli_connect("localhost","root","111111","phpweb");
 
 
-�ش�� db���̺� ����
+※댓글 db테이블 생성
 
 CREATE TABLE `phpweb`.`comment` ( 
 `no` int(11) NOT NULL, 
@@ -17,7 +17,7 @@ CREATE TABLE `phpweb`.`comment` (
 PRIMARY KEY (`no`); ) 
 
 
-����Ʃ�� �Խ��� db���̺� ����
+※유튜브 게시판 db테이블 생성
 
 CREATE TABLE `phpweb`.`movie` ( 
 `no` int(11) NOT NULL, 
@@ -29,7 +29,7 @@ CREATE TABLE `phpweb`.`movie` (
 PRIMARY KEY (`no`); ) 
 
 
-��ȸ������ db ���̺� ����
+※회원가입 db 테이블 생성
 
 CREATE TABLE `phpweb`.`signup2` ( 
 `no` int(11) NOT NULL, 
@@ -41,7 +41,7 @@ CREATE TABLE `phpweb`.`signup2` (
 PRIMARY KEY (`no`); ) 
 
 
-�ذԽ��� db���̺� ����
+※게시판 db테이블 생성
 
 CREATE TABLE `phpweb`.`textpage2` ( 
 `no` int(11) NOT NULL, 
@@ -52,6 +52,17 @@ CREATE TABLE `phpweb`.`textpage2` (
 `date` varchar(20) NOT NULL, 
 `file` varchar(100) DEFAULT NULL,
 PRIMARY KEY (`no`); )
+
+※동영상댓글 db테이블 생성
+
+CREATE TABLE `phpweb`.`mcomment` ( 
+`no` int(11) NOT NULL, 
+`listnumber` int(20) NOT NULL, 
+`id` varchar(30) NOT NULL, 
+`name` varchar(30) NOT NULL, 
+`mcomtext` text NOT NULL, 
+`date` varchar(30) NOT NULL,
+PRIMARY KEY (`no`); ) 
 
 
 
