@@ -69,7 +69,7 @@
     include("./modal.php");
     include("./lib/asd.js");
     include("./lib/asdd.js");
-    mysqli_connect("localhost","root","111111","phpweb");
+    mysqli_connect("localhost","id5424089_root","111111","id5424089_phpweb");
     $signup=signupp();
     ?>
 
@@ -147,7 +147,7 @@
                     <div>
                         <?php
                         $_page=$_GET[_page];
-                        $connect = mysqli_connect("localhost","root","111111","phpweb");
+                        $connect = mysqli_connect("localhost","id5424089_root","111111","id5424089_phpweb");
                         
                         $view_total = 5;
                         if(!$_page)($_page=1);
@@ -183,7 +183,7 @@
                         echo "<span style=\"position:absolute; top:50px; left: 140px;\">글쓴이 : $name</span>";
                         echo "<span style=\"position:absolute; top:71px; left: 140px;\">날짜 : $date</span>";
                         if($_SESSION[id] == $data[id]){
-                        echo "<div style=\"width: auto; display: inline-block; position: absolute; right: 15px; top: 20%;\"><a class=\"btn btn-danger btn-xs text-center\" href = \"./moviedelete.php?no=$data[no]&id=$data[id]\" onclick=\"return confirm('정말 삭제하시겠습니까?');\">글 삭제</a></div>";
+                        echo "<div style=\"width: auto; display: inline-block; position: absolute; right: 15px; top: 20%;\"><a class=\"btn btn-danger btn-xs text-center\" href = \"./moviedelete.php?no=$data[no]&id=$data[id]&listnumber=$number\" onclick=\"return confirm('정말 삭제하시겠습니까?');\">글 삭제</a></div>";
                         echo "<div style=\"width: auto; display: inline-block; position: absolute; right: 15px; top: 60%;\"><a class=\"btn btn-primary btn-xs text-center\" href = \"./movieedit.php?no=$data[no]&id=$data[id]\">글 수정</a></div>";
                         }
                         echo "<img src=\"http://img.youtube.com/vi/$address/0.jpg\" style=\"width:120px; height:80px; float: left;\">";
