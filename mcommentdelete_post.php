@@ -1,6 +1,6 @@
 <?php
     include("./lib/dbcon.php");
-    $connect = mysqli_connect("localhost","id5424089_root","111111","id5424089_phpweb");
+    $connect = mysqli_connect("localhost","root","111111","phpweb");
     $signup=signupp();
     if(!$_SESSION[id])Error("로그인 후 이용해 주세요");
     
