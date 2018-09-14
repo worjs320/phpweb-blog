@@ -2,7 +2,7 @@
 <hr width="100%">
                 <div style="margin-left:auto; margin-right:auto; max-width:720px;"><h2>댓글</h2></div>
                 <form action="./mcomment_post.php" method="post" style="text-align:center; margin-top:20px;">
-                    <input type="hidden" name="listnumber" value="<?=$number?>">
+                    <input type="hidden" name="listnumber" value="<?=$listnumber?>">
                     <input type="hidden" name="id" value="<?=$_SESSION[id]?>">
 
                     <div style="margin-bottom: 30px;">
@@ -17,7 +17,7 @@
                 </form>
 
                 <?php
-                $query2 = "select * from mcomment where listnumber='$number' order by no desc";
+                $query2 = "select * from mcomment where listnumber='$listnumber' order by no desc";
                 $result2 = mysqli_query($connect,$query2);
 
                 while($data2 = mysqli_fetch_array($result2)){
