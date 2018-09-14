@@ -22,6 +22,6 @@
     mysqli_query($connect,$query);
 ?>
 <script>
-    alert('댓글 작성 완료.');
+    alert('댓글 작성 완료');
     location.href='./movie.php';
 </script>
