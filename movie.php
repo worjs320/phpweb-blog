@@ -22,7 +22,6 @@
         .numbervar {
             text-align: center;
         }
-
         .videoo {
         position: relative;
         padding-bottom: 53%; /* 16:9 비율인 경우 */
@@ -156,7 +155,6 @@
                         $totalpage = mysqli_query($connect,$query2);
                         $num = mysqli_num_rows($totalpage);
                         $num;
-
                         $query = "select * from movie order by no desc limit $page,$view_total";
                         $result = mysqli_query($connect,$query);
         
@@ -165,36 +163,36 @@
                         
                         ?>
                         <?php
-
                         while($data = mysqli_fetch_array($result)){
                         $address = $data[address];
                         $title = $data[title];
                         $name = $data[name];
                         $date = $data[date];
+                        $listnumber = $data[no];
                         
-                        $query3 = "select * from mcomment where listnumber='$number' order by no desc";
+                        $query3 = "select * from mcomment where listnumber='$listnumber' order by no desc";
                         $result3 = mysqli_query($connect,$query3);
                         $total_rows = mysqli_num_rows($result3);
                         
-                        echo "<div class=\"panel-body\" style = \"background-color:#ccc; position: relative; max-width:726px;\"><a class=\"titlefontsize\"href=\"javascript:doDisplay($number);\" style=\" position:absolute; top:17px; left:140px; text-decoration:none;\">$title</a>";
-                        echo "<div class=\"mcomment\"style=\"position:absolute;right:310px;\"><a class=\"btn btn-primary text-center;\" style = \"background-color:#bce8f1; color:#333; border-color:#bce8f1; position:absolute; right:-35px; top:39px;\" href=\"javascript:doDisplay($number$number);\">댓글 보기"; 
+                        echo "<div class=\"panel-body\" style = \"background-color:#ccc; position: relative; max-width:726px;\"><a class=\"titlefontsize\"href=\"javascript:doDisplay($listnumber);\" style=\" position:absolute; top:17px; left:140px; text-decoration:none;\">$title</a>";
+                        echo "<div class=\"mcomment\"style=\"position:absolute;right:310px;\"><a class=\"btn btn-primary text-center;\" style = \"background-color:#bce8f1; color:#333; border-color:#bce8f1; position:absolute; right:-35px; top:39px;\" href=\"javascript:doDisplay($listnumber$listnumber);\">댓글 보기"; 
                         echo " [".$total_rows."]";
                         echo "</a></div>";
                         echo "<span style=\"position:absolute; top:50px; left: 140px;\">글쓴이 : $name</span>";
                         echo "<span style=\"position:absolute; top:71px; left: 140px;\">날짜 : $date</span>";
                         if($_SESSION[id] == $data[id]){
-                        echo "<div style=\"width: auto; display: inline-block; position: absolute; right: 15px; top: 20%;\"><a class=\"btn btn-danger btn-xs text-center\" href = \"./moviedelete.php?no=$data[no]&id=$data[id]&listnumber=$number\" onclick=\"return confirm('정말 삭제하시겠습니까?');\">글 삭제</a></div>";
+                        echo "<div style=\"width: auto; display: inline-block; position: absolute; right: 15px; top: 20%;\"><a class=\"btn btn-danger btn-xs text-center\" href = \"./moviedelete.php?no=$data[no]&id=$data[id]&listnumber=$listnumber\" onclick=\"return confirm('정말 삭제하시겠습니까?');\">글 삭제</a></div>";
                         echo "<div style=\"width: auto; display: inline-block; position: absolute; right: 15px; top: 60%;\"><a class=\"btn btn-primary btn-xs text-center\" href = \"./movieedit.php?no=$data[no]&id=$data[id]\">글 수정</a></div>";
                         }
                         echo "<img src=\"http://img.youtube.com/vi/$address/0.jpg\" style=\"width:120px; height:80px; float: left;\">";
                         echo "</div>";
                         
-                        echo "<div id=\"$number\" class=\"videoo\" style=\"text-align:center; display:none; margin-left: auto; margin-right: auto; max-width: 726px; max-height: 406px;\"><iframe id=\"player-$number\" style =\"max-width: 726px; max-height: 408px; text-align:center;\" src=\"https://www.youtube.com/embed/$address?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0&autohide=1&hd=1&wmode=opaque\" allowfullscreen></iframe>";
+                        echo "<div id=\"$listnumber\" class=\"videoo\" style=\"text-align:center; display:none; margin-left: auto; margin-right: auto; max-width: 726px; max-height: 406px;\"><iframe id=\"player-$listnumber\" style =\"max-width: 726px; max-height: 408px; text-align:center;\" src=\"https://www.youtube.com/embed/$address?enablejsapi=1&version=3&playerapiid=ytplayer&rel=0&showinfo=0&autohide=1&hd=1&wmode=opaque\" allowfullscreen></iframe>";
                        
                         echo "</div>";
                         echo "<div class=\"container\"></div>";
                         
-                         echo "<div id=\"$number$number\" style=\"display:none\";>"; 
+                         echo "<div id=\"$listnumber$listnumber\" style=\"display:none\";>"; 
                     include("./mcomment.php"); 
                     echo "</div>";
                         $number--;               
