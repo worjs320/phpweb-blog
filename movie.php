@@ -68,7 +68,7 @@
     include("./modal.php");
     include("./lib/asd.js");
     include("./lib/asdd.js");
-    mysqli_connect("localhost","id5424089_root","111111","id5424089_phpweb");
+    mysqli_connect("localhost","root","111111","phpweb");
     $signup=signupp();
     ?>
 
@@ -146,7 +146,7 @@
                     <div>
                         <?php
                         $_page=$_GET[_page];
-                        $connect = mysqli_connect("localhost","id5424089_root","111111","id5424089_phpweb");
+                        $connect = mysqli_connect("localhost","root","111111","phpweb");
                         
                         $view_total = 5;
                         if(!$_page)($_page=1);
